@@ -23,6 +23,8 @@ namespace HHRRSupport.Models
         //////////////////////////////////////////////////////////////
         [Display(Name = Literals.LanguageList)]
         public List<Language> LanguageList { get; set; }
+
+        public AreaN1 DepArea {get; set;}
         
 
     }
