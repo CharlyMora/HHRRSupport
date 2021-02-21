@@ -12,6 +12,10 @@ namespace HHRRSupport.Models
         public string ID { get; set; }
         //////////////////////////////////////////////////////////
         [Required]
+        [Display(Name = Literals.Active)]
+        public bool Active { get; set; }
+        //////////////////////////////////////////////////////////
+        [Required]
         [Display(Name = Literals.Names)]
         public string Name { get; set; }
         //////////////////////////////////////////////////////////
@@ -49,9 +53,13 @@ namespace HHRRSupport.Models
         //////////////////////////////////////////////////////////////
         [Display(Name = Literals.LanguageList)]
         public List<Language> LanguageList { get; set; }
-        //////////////////////////////////////////////////////////
-        [Display(Name = Literals.CustomersList)]
-        public List<Customer> CustomersList { get; set; }
+        //////////////////////////////////////////////////////////////
+        [Display(Name = Literals.Adress)]
+        public string Adress { get; set; }
+        //////////////////////////////////////////////////////////////
+        [Display(Name = Literals.Experience)]
+        public List<Experience> Experience { get; set; }
+        
         
         
         

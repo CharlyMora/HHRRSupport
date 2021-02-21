@@ -16,6 +16,8 @@ namespace HHRRSupport.Models
         public const string LanguageList = "Lista de Idiomas";
         public const string Name = "Nombre";
         public const string Names = "Nombres";
+        public const string BusinessName = "Nombres de la empresa";
+        public const string MontsOnPlace = "Meses en la posicion";
         public const string Language = "Idioma";
         public const string LegalName = "Nombre legal";
         public const string Country = "Pais";
@@ -23,6 +25,8 @@ namespace HHRRSupport.Models
         public const string City = "Ciudad";
         public const string Adress = "Ciudad";
         public const string Type = "Tipo";
+        public const string Active = "Activo";
+        public const string Experience = "Experiencia";
         public const string Description = "Descripcion";
         public const string LastName1 = "Primer Apellido";
         public const string LastName2 = "Segundo Apellido";

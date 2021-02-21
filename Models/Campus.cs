@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace HHRRSupport.Models
 {
     public class Campus {
+        //Also known as site
         [Key]
         [Display(Name = Literals.IdB, Prompt = Literals.IdBPrompt)]
         public string ID { get; set; }
@@ -21,7 +22,8 @@ namespace HHRRSupport.Models
         [Display(Name = Literals.Adress)]
         public string Adress { get; set; }
         //////////////////////////////////////////////////////////////
-        public List<AreaN1> AreasN1List { get; set; }
+        [Display(Name = Literals.AreaList)]
+        public List<Area> AreasList { get; set; }
         //////////////////////////////////////////////////////////////
         public DateTime CreationDate { get; set; }
         

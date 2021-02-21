@@ -8,6 +8,10 @@ namespace HHRRSupport.Models
         [Key]
         [Display(Name = Literals.Id, Prompt = Literals.IdPrompt)]
         public string ID { get; set; }
+        //////////////////////////////////////////////////////////
+        [Required]
+        [Display(Name = Literals.Active)]
+        public bool Active { get; set; }
         //////////////////////////////////////////////////////////////
         [Required]
         [Display(Name = Literals.Name)]
@@ -23,9 +27,8 @@ namespace HHRRSupport.Models
         //////////////////////////////////////////////////////////////
         [Display(Name = Literals.LanguageList)]
         public List<Language> LanguageList { get; set; }
-
-        public AreaN1 DepArea {get; set;}
-        
-
+        //////////////////////////////////////////////////////////
+        [Display(Name = Literals.EmployeesList)]
+        public List<Employee> EmployeesList { get; set; }
     }
 }

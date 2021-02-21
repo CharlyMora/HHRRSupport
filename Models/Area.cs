@@ -18,11 +18,10 @@ namespace HHRRSupport.Models
         public string Description { get; set; }
         //////////////////////////////////////////////////////////
         [Display(Name = Literals.AreaList)]
-        public List<AreaN1> AreasList { get; set; }
-        
+        public List<Area> AreasList { get; set; }
         //////////////////////////////////////////////////////////
-        [Display(Name = Literals.EmployeesList)]
-        public List<Employee> EmployeesList { get; set; }
+        [Display(Name = Literals.CustomersList)]
+        public List<Customer> CustomersList { get; set; }
         
 
     }
