@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using HHRRSupport.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HHRRSupport
 {
@@ -24,6 +26,14 @@ namespace HHRRSupport
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            /*services.AddDbContext<OferentContext>(
+                options => options.UseInMemoryDatabase(databaseName: "testDB")
+            );*/
+            string connString = ConfigurationExtensions.GetConnectionString(this.Configuration, "DefaultConnectionString");
+            services.AddDbContext<BusinessContext>(
+                options => options.UseSqlServer(connString)
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

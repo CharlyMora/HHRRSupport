@@ -26,7 +26,14 @@ namespace HHRRSupport.Models
         public List<Area> AreasList { get; set; }
         //////////////////////////////////////////////////////////////
         public DateTime CreationDate { get; set; }
+        /////////////////////////////////////////////////////////////////
+        public string LocalBusinessId { get; set; }
+        /////////////////////////////////////////////////////////////////
+        //parece que no se usa en la practica aunque si parece
+        //estar referenciado en otras partes del codigo
+        //public LocalBusiness LocalBusiness { get; set; }
+    }
         
 
-    }
+    
 }

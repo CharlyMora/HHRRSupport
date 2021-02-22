@@ -7,7 +7,7 @@ namespace HHRRSupport.Models
     public class LocalBusiness {
         [Key]
         [Display(Name = Literals.IdB, Prompt = Literals.IdBPrompt)]
-        public string ID { get; set; }
+        public string Id { get; set; }
         /////////////////////////////////////////////////////////////////
         [Required]
         [Display(Name = Literals.Name)]
@@ -32,5 +32,11 @@ namespace HHRRSupport.Models
         public List<Campus> CampusList { get; set; }
         /////////////////////////////////////////////////////////////////
         public DateTime CreationDate { get; set; }
+        /////////////////////////////////////////////////////////////////
+        public string BusinessId { get; set; }
+        /////////////////////////////////////////////////////////////////
+        //parece que no se usa en la practica aunque si parece
+        //estar referenciado en otras partes del codigo
+        //public Business Business { get; set; }
     }
 }
