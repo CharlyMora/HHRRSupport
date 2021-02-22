@@ -26,7 +26,6 @@ namespace HHRRSupport
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
             /*services.AddDbContext<OferentContext>(
                 options => options.UseInMemoryDatabase(databaseName: "testDB")
             );*/
