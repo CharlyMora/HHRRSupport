@@ -24,6 +24,22 @@ namespace HHRRSupport.Controllers
             return View(await _context.LocalBusiness.ToListAsync());
         }
 
+        public async Task<IActionResult> BuList(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var localBusiness = await _context.LocalBusiness.Where(m => m.BusinessId == id).ToListAsync();
+            if (localBusiness == null)
+            {
+                return NotFound();
+            }
+
+            return View(localBusiness);
+        }
+
         // GET: LocalBusiness/Details/5
         public async Task<IActionResult> Details(string id)
         {
