@@ -93,6 +93,18 @@ namespace HHRRSupport.Controllers
             {
                 return NotFound();
             }
+
+            IList<String> BusinessIds= new List<String>();
+
+            foreach (Business b in _context.Business){
+                BusinessIds.Add(b.Id);
+            }
+
+            ViewBag.BusinessId= BusinessIds.Select(x=>
+                new SelectListItem(){
+                    Text = x.ToString()
+                }
+            );
             return View(localBusiness);
         }
 
