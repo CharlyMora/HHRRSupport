@@ -58,8 +58,6 @@ namespace HHRRSupport.Controllers
             {
                 return NotFound();
             }
-            IList<String> BusinessIds = new List<String>();
-            ViewBag.BusinessId = GetBusinessIds(BusinessIds);
 
             return View(localBusiness);
         }
@@ -67,6 +65,7 @@ namespace HHRRSupport.Controllers
         // GET: LocalBusiness/Create
         public IActionResult Create()
         {
+            ViewBag.BusinessId = GetBusinessIds();
             return View();
         }
 
@@ -101,6 +100,7 @@ namespace HHRRSupport.Controllers
                 return NotFound();
             }
 
+            ViewBag.BusinessId = GetBusinessIds();
             
             return View(localBusiness);
         }
@@ -174,8 +174,11 @@ namespace HHRRSupport.Controllers
             return _context.LocalBusiness.Any(e => e.Id == id);
         }
 
-        private dynamic GetBusinessIds(IList<string> BusinessIds)
+        private dynamic GetBusinessIds()
         {
+            IList<String> BusinessIds = new List<String>();
+            string emp = "";
+            BusinessIds.Add(emp);
             foreach (Business b in _context.Business)
             {
                 BusinessIds.Add(b.Id);
