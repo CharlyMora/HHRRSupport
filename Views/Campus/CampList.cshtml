@@ -7,7 +7,8 @@
 <h1>Index for  @ViewBag.LBId</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New</a> |
+    <a asp-controller="LocalBusiness" asp-action="Details" asp-route-id="@ViewBag.LBId"> @ViewBag.LBId Details</a>
 </p>
 <table class="table">
     <thead>
