@@ -13,17 +13,21 @@ namespace HHRRSupport.Controllers
     {
         private readonly BusinessContext _context;
 
+        
+
         public LocalBusinessController(BusinessContext context)
         {
             _context = context;
         }
+
+        
 
         // GET: LocalBusiness
         public async Task<IActionResult> Index()
         {
             return View(await _context.LocalBusiness.ToListAsync());
         }
-
+        //Local business for a specific Business
         public async Task<IActionResult> BuList(string id)
         {
             if (id == null)
@@ -54,6 +58,8 @@ namespace HHRRSupport.Controllers
             {
                 return NotFound();
             }
+            IList<String> BusinessIds = new List<String>();
+            ViewBag.BusinessId = GetBusinessIds(BusinessIds);
 
             return View(localBusiness);
         }
@@ -77,6 +83,7 @@ namespace HHRRSupport.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            
             return View(localBusiness);
         }
 
@@ -94,17 +101,7 @@ namespace HHRRSupport.Controllers
                 return NotFound();
             }
 
-            IList<String> BusinessIds= new List<String>();
-
-            foreach (Business b in _context.Business){
-                BusinessIds.Add(b.Id);
-            }
-
-            ViewBag.BusinessId= BusinessIds.Select(x=>
-                new SelectListItem(){
-                    Text = x.ToString()
-                }
-            );
+            
             return View(localBusiness);
         }
 
@@ -175,6 +172,21 @@ namespace HHRRSupport.Controllers
         private bool LocalBusinessExists(string id)
         {
             return _context.LocalBusiness.Any(e => e.Id == id);
+        }
+
+        private dynamic GetBusinessIds(IList<string> BusinessIds)
+        {
+            foreach (Business b in _context.Business)
+            {
+                BusinessIds.Add(b.Id);
+            }
+            dynamic z = BusinessIds.Select(x =>
+                new SelectListItem()
+                {
+                    Text = x.ToString()
+                }
+            );
+            return(z);
         }
     }
 }
