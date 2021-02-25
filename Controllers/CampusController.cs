@@ -23,6 +23,24 @@ namespace HHRRSupport.Controllers
         {
             return View(await _context.Campus.ToListAsync());
         }
+        //Campuses for a specific LocalBusiness 
+        //(i don't know if campuses is correctly spell)
+        public async Task<IActionResult> CampList(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var campuses = await _context.Campus
+                .Where(m => m.LocalBusinessId == id).ToListAsync();
+            if (campuses == null)
+            {
+                return NotFound();
+            }
+            ViewBag.LBId= id;
+            return View(campuses);
+        }
 
         // GET: Campus/Details/5
         public async Task<IActionResult> Details(string id)

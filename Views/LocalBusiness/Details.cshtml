@@ -51,5 +51,6 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to general List</a> |
-    <a asp-action="BuList" asp-route-id="@Model.BusinessId">Back to @Model.BusinessId.ToString() List</a>
+    <a asp-action="BuList" asp-route-id="@Model.BusinessId">Back to @Model.BusinessId.ToString() List</a> |
+    <a asp-area="" asp-controller="Campus" asp-action="CampList" asp-route-id="@Model.Id">Business List</a> 
 </div>

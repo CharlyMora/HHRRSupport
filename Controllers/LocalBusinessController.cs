@@ -27,6 +27,7 @@ namespace HHRRSupport.Controllers
         {
             return View(await _context.LocalBusiness.ToListAsync());
         }
+
         //Local business for a specific Business
         public async Task<IActionResult> BuList(string id)
         {
@@ -35,7 +36,8 @@ namespace HHRRSupport.Controllers
                 return NotFound();
             }
 
-            var localBusiness = await _context.LocalBusiness.Where(m => m.BusinessId == id).ToListAsync();
+            var localBusiness = await _context.LocalBusiness
+                .Where(m => m.BusinessId == id).ToListAsync();
             if (localBusiness == null)
             {
                 return NotFound();

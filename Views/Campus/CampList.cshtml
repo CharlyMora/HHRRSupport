@@ -4,8 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>General Index</h1>
+<h1>Index for  @ViewBag.LBId</h1>
 
+<p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
@@ -22,9 +23,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CreationDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LocalBusinessId)
             </th>
             <th></th>
         </tr>
@@ -43,9 +41,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LocalBusinessId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
