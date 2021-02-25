@@ -23,7 +23,7 @@ namespace HHRRSupport.Models
         public const string Country = "Pais";
         public const string Region = "Region";
         public const string City = "Ciudad";
-        public const string Adress = "Ciudad";
+        public const string Adress = "Direccion";
         public const string Type = "Tipo";
         public const string Active = "Activo";
         public const string Experience = "Experiencia";
