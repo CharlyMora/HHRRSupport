@@ -8,7 +8,7 @@ namespace HHRRSupport.Models
     public class Campus {
         //Also known as site
         [Key]
-        [Required(ErrorMessage="ponagala")]
+        [Required]
         [Display(Name = Literals.IdB, Prompt = Literals.IdBPrompt)]
         public string ID { get; set; }
         //////////////////////////////////////////////////////////////
