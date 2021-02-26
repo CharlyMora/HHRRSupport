@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HHRRSupport.Models
 {
     public class Campus {
         //Also known as site
         [Key]
+        [Required(ErrorMessage="ponagala")]
         [Display(Name = Literals.IdB, Prompt = Literals.IdBPrompt)]
         public string ID { get; set; }
         //////////////////////////////////////////////////////////////
