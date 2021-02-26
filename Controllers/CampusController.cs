@@ -74,8 +74,16 @@ namespace HHRRSupport.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Name,City,Adress,CreationDate,LocalBusinessId")] Campus campus)
         {
+            ViewBag.LocalBusinessId = GetLocalBusinessIds();
+            foreach(Campus c in _context.Campus){
+                if(c.ID == campus.ID){
+                    ViewBag.IdAlreadyExists="ID ya existe, porfavor intente otro ID";
+                    return View();
+                }
+            }
             if (ModelState.IsValid)
             {
+                ViewBag.IdAlreadyExists="";
                 _context.Add(campus);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
