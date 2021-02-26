@@ -168,7 +168,13 @@ namespace HHRRSupport.Controllers
         {
             return _context.Campus.Any(e => e.ID == id);
         }
-
+        ///<summary>
+        ///Genera la lista de IDs para los negocios locales
+        ///que sera usada en lsa vistas de edicion y creacion
+        ///</summary>
+        ///<param name="z">parametro de regreso</param>
+        ///<returns>lista de regreso</returns>
+        
         private dynamic GetLocalBusinessIds()
         {
             IList<String> LocalBusinessIds = new List<String>();
