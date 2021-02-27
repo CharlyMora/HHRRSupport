@@ -67,7 +67,7 @@ namespace HHRRSupport.Controllers
         // GET: LocalBusiness/Create
         public IActionResult Create()
         {
-            ViewBag.BusinessId = GetBusinessIds();
+            ViewBag.BusinessId = GetLocalBusinessIds();
             return View();
         }
 
@@ -80,6 +80,15 @@ namespace HHRRSupport.Controllers
         {
             if (ModelState.IsValid)
             {
+                //verification of repeated id
+                foreach(LocalBusiness l in _context.LocalBusiness){
+                    if(l.Id == localBusiness.Id){
+                        //In case of a repeated Id viewbag needs to be reloaded
+                        ViewBag.LocalBusinessId = GetLocalBusinessIds();
+                        ViewBag.IdAlreadyExists="ID ya existe, porfavor intente otro ID";
+                        return View();
+                    }
+                }
                 _context.Add(localBusiness);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -102,7 +111,7 @@ namespace HHRRSupport.Controllers
                 return NotFound();
             }
 
-            ViewBag.BusinessId = GetBusinessIds();
+            ViewBag.BusinessId = GetLocalBusinessIds();
             
             return View(localBusiness);
         }
@@ -176,7 +185,7 @@ namespace HHRRSupport.Controllers
             return _context.LocalBusiness.Any(e => e.Id == id);
         }
 
-        private dynamic GetBusinessIds()
+        private dynamic GetLocalBusinessIds()
         {
             IList<String> BusinessIds = new List<String>();
             string emp = "";

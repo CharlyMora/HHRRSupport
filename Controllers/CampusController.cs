@@ -74,8 +74,6 @@ namespace HHRRSupport.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Name,City,Adress,CreationDate,LocalBusinessId")] Campus campus)
         {
-            
-            
             if (ModelState.IsValid)
             {
                 //verification of repeated id

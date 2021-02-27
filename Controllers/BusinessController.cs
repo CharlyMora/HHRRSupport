@@ -57,6 +57,14 @@ namespace HHRRSupport.Controllers
         {
             if (ModelState.IsValid)
             {
+                //verification of repeated id
+                foreach(Business b in _context.Business){
+                    if(b.Id == business.Id){
+                        //In case of a repeated Id viewbag needs to be reloaded
+                        ViewBag.IdAlreadyExists="ID ya existe, porfavor intente otro ID";
+                        return View();
+                    }
+                }
                 _context.Add(business);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
