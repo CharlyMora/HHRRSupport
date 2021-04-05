@@ -4,10 +4,9 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
 <div>
-    <h4>LocalBusiness</h4>
+    <h4>LocalBusiness Details</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -51,6 +50,6 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to general List</a> |
-    <a asp-action="BuList" asp-route-id="@Model.BusinessId">Back to @Model.BusinessId.ToString() List</a> |
+    <a asp-action="BuList" asp-route-id="@Model.BusinessId">Back to @Model.BusinessId.ToString() Local Business List</a> |
     <a asp-area="" asp-controller="Campus" asp-action="CampList" asp-route-id="@Model.Id">Campus List</a> 
 </div>
