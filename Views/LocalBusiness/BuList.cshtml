@@ -4,10 +4,11 @@
     ViewData["Title"] = "BuList";
 }
 
-<h1>BuList</h1>
-
+<h1> @ViewBag.busname Local Business List</h1>
+<a asp-action="Details" asp-controller="Business" asp-route-id="@ViewBag.busname">
+     Back to @ViewBag.busname details</a> 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New Local Business</a>
 </p>
 <table class="table">
     <thead>

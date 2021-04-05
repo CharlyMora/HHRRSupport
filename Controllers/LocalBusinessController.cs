@@ -42,7 +42,7 @@ namespace HHRRSupport.Controllers
             {
                 return NotFound();
             }
-
+            ViewBag.busname =id;
             return View(localBusiness);
         }
 
