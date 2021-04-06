@@ -12,6 +12,10 @@ a {
   color: #0366d6;
 }
 
+.navigationbar{
+  height: 2rem;
+}
+
 .main-name{
   font-size: 1.5rem;
 }
