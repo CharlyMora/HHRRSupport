@@ -16,6 +16,10 @@ a {
   height: 2rem;
 }
 
+.navbar-nav{
+  justify-content: center;
+}
+
 .main-name{
   font-size: 1.5rem;
 }
