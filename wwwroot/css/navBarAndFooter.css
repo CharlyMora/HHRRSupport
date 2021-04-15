@@ -15,27 +15,14 @@ a.navbar-brand {
   justify-content: center;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
 
-
+/* bootstrap issue 101.75 instead of 575.75 as min to hide navbar */
+/* bootstrap issue 118 instead of 576 as min to hide navbar */
 
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
 
 /* Sticky footer styles
 -------------------------------------------------- */
