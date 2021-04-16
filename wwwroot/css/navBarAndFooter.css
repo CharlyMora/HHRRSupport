@@ -49,5 +49,6 @@ body {
 
 .footerElement{
   font-size: 1rem;
-  margin-bottom: 0px;
+  margin: 0px 5px;
+
 }
