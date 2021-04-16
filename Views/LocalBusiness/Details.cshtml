@@ -8,7 +8,10 @@
 <div>
     <h4>@Model.Id Details (National Business)</h4>
     <hr />
-    <dl class="row">
+    @* como alternativa se podria usar *@
+    @* <dl class="row"> *@
+    @* pero algunas palabras se sobreponen rapidamente *@
+    <dl >
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CommercialName)
         </dt>
