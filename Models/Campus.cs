@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace HHRRSupport.Models
 {
     public class Campus {
-        //Also known as site
+        //Also known as site, venues, seats, offices or headquarters
         [Key]
         [Required]
         [Display(Name = Literals.IdB, Prompt = Literals.IdBPrompt)]
